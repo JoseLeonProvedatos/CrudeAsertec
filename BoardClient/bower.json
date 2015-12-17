@@ -1,0 +1,28 @@
+{
+  "name": "cliente",
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-cookies": "~1.4.8"
+  },
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Jose Luis Leon"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

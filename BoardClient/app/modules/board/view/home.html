@@ -1,0 +1,29 @@
+<div class="container">
+	<h3>Personas</h3>
+
+	<div class="container">
+		<ul class="nav nav-pills" role="tablist">
+			<li><a href="#!/login">login</a></li>
+			<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<table class="table table-striped">
+			<thead><tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Sexo</th>
+				<th>Telefono</th>
+			</tr></thead>
+			<tbody><tr ng-repeat="x in json.records">
+				<td>{{ x.id }}</td>
+				<td>{{ x.nombre }}</td>
+				<td>{{ x.apellido }}</td>
+				<td>{{ x.sexo }}</td>
+				<td>{{ x.telefono }}</td>
+			</tr></tbody>
+		</table>
+	</div>
+</div>

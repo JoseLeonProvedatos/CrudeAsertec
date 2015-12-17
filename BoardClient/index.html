@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Board</title>
+    <link rel="stylesheet" href="public/bower_components/angular/angular-csp.css" />
+    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <style type="text/css">
+      [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body class="no-skin" ng-app="ClientApp" ng-cloak> 
+    <div class="main-content" ng-view></div>
+
+    <!-- Scripts -->
+    <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Scripts -->
+    <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+    <script src="public/bower_components/angular/angular.js"></script>
+    <script src="public/bower_components/angular/angular.min.js"></script>
+    <script src="public/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="public/bower_components/angular-route/angular-route.js"></script>
+    <script src="public/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="app.js"></script>
+    <script src="app/modules/core/module.js"></script>
+    <script src="app/modules/core/ajax/module.js"></script>
+    <script src="app/modules/core/ajax/model.js"></script>
+    <!-- Scripts Auth -->
+    <script src="app/modules/board/board.module.js"></script>
+    <!-- <script src="app/modules/board/board.model.js"></script> -->
+    <script src="app/modules/board/config/board.route.js"></script>
+    <script src="app/modules/board/controllers/board.controller.js"></script>
+    <script src="app/modules/board/controllers/login.controller.js"></script>
+  </body>
+</html>
