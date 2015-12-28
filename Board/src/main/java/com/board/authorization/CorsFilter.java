@@ -1,6 +1,6 @@
 package com.board.authorization;
 
-/*import java.io.IOException;
+import java.io.IOException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -16,13 +16,11 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Order(Ordered.HIGHEST_PRECEDENCE)*/
-public class CorsFilter /*implements Filter*/ {
+@Order(Ordered.HIGHEST_PRECEDENCE)
+public class CorsFilter implements Filter {
 
-	/*@Override
+	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -31,18 +29,15 @@ public class CorsFilter /*implements Filter*/ {
 		HttpServletRequest request = (HttpServletRequest) req;
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
-		response.setHeader("Access-Control-Allow-Headers", "Authorization");
+		response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
 		response.setHeader("Access-Control-Max-Age", "3600");
-		if (request.getMethod()!= "OPTIONS") {
+		
+		if (!request.getMethod().equals("OPTIONS")) {
 			chain.doFilter(req, res);
-		} else {
-			
 		}
 	}
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-		
-	}*/
+	}
 }

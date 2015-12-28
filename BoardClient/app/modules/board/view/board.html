@@ -1,0 +1,55 @@
+<div class="container">
+	<h3>Persons</h3>
+
+	<div class="container">
+		<ul class="nav nav-pills" role="tablist">
+			<li class="active" ng-show="authenticated">
+				<a href="" ng-click="logout()">Logout</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="alert alert-danger" ng-show="boardError">
+		{{boardErrorText}}
+	</div>
+
+	<div class="container">
+		<table ng-table="board.tableParams" class="table table-striped" show-filter="true">
+			<tr ng-repeat="person in data.records">
+				<td data-title="'ID'">{{person.id}}</td>
+				<td data-title="'CI'">{{person.ci}}</td>
+				<td data-title="'Name'" filter="{name: 'text'}">{{person.name}}</td>
+				<td data-title="'Lastname'">{{person.lastname}}</td>
+				<td data-title="'Gender'">{{person.gender}}</td>
+				<td data-title="'Phone'">{{person.phone}}</td>
+				<td ng-show="isEditing">
+					<button type="button" class="btn btn-info" ng-click="editEntry(person)">
+						<span class="glyphicon glyphicon-pencil" />
+					</button>
+				</td>
+				<td ng-show="isDeleting">
+					<button type="button" class="btn btn-danger" ng-click="removeEntry(person.id)">
+						<span class="glyphicon glyphicon-remove" />
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="container">
+		<ul class="nav nav-pills" role="tablist">
+			<li class="active" ng-show="!isCancellable">
+				<a href="" ng-click="addNew()">Add new</a>
+			</li>
+			<li class="active" ng-show="!isCancellable">
+				<a href="" ng-click="edit()">Edit</a>
+			</li>
+			<li class="active" ng-show="!isCancellable">
+				<a href="" ng-click="remove()">Remove</a>
+			</li>
+			<li class="active" ng-show="isCancellable">
+				<a href="" ng-click="cancel()">Cancel</a>
+			</li>
+		</ul>
+	</div>
+</div>

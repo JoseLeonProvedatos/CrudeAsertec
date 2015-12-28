@@ -2,7 +2,6 @@ package com.boar.util;
 
 import java.util.List;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parser<T> {
@@ -36,24 +35,13 @@ public class Parser<T> {
 		this.list = list;
 	}
 	
-	public String parseObject() {
-		if (t != null) {
-			try {
-				ObjectMapper mapper = new ObjectMapper();
+	public String parse() {
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			
+			if (t != null) {
 				return mapper.writeValueAsString(t);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-				return null;
-			}
-		} else {
-			return null;
-		}
-	}
-	
-	public String parseList() {
-		if (list != null) {
-			try {
-				ObjectMapper mapper = new ObjectMapper();
+			} else if (list != null) {
 				String json = "{\"records\":[";
 				
 				for (T obj : list) {
@@ -63,11 +51,11 @@ public class Parser<T> {
 				
 				json = json.substring(0, json.length()-1) + "]}";
 				return json;
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
+			} else {
 				return null;
 			}
-		} else {
+		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 	}

@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-1" />
+
+		<div class="col-md-6">
+			<h3>{{formTitle}}</h3>
+
+			<div class="alert alert-danger" ng-show="addError">
+				{{addErrorText}}
+			</div>
+
+			<div class="form-group">
+				<label for="ci">CI: </label>
+				<input class="form-control" type="text" id="ci" name="ci" ng-model="person.ci" />
+				<label for="name">Name: </label>
+				<input class="form-control" type="text" id="name" name="name" ng-model="person.name" />
+				<label for="lastname">Lastname: </label>
+				<input class="form-control" type="text" id="lastname" name="lastname" ng-model="person.lastname" />
+				<label for="gender">Gender: </label>
+				<input class="form-control" type="text" id="gender" name="gender" ng-model="person.gender" />
+				<label for="phone">Phone: </label>
+				<input class="form-control" type="text" id="phone" name="phone" ng-model="person.phone" />
+			</div>
+
+			<center>
+				<ul class="nav nav-pills" role="tablist">
+					<li class="active">
+						<a href="" ng-click="add()">{{actionText}}</a>
+					</li>
+					<li class="active">
+						<a href="" ng-click="cancel()">Cancel</a>
+					</li>
+				</ul>
+			</center>
+		</div>
+
+		<div class="col-md-5" />
+	</div>
+</div>

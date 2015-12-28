@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4" />
+
+		<div class="col-md-4">
+			<h3>Log in</h3>
+
+			<div class="alert alert-danger" ng-show="loginError">
+				{{loginErrorText}}
+			</div>
+
+			<div class="form-group">
+				<label for="username">Username: </label>
+				<input type="text" class="form-control" id="username" name="username" ng-model="auth.user"
+					ng-keypress="next($event)"/>
+				<label for="password">Password: </label>
+				<input type="password" class="form-control" id="password" name="password" ng-model="auth.password"
+					ng-keypress="enter($event)"/>
+			</div>
+
+			<center>
+				<button ng-click="login()" class="btn btn-primary" style="alingn:center;">Log in</button>
+			</center>
+		</div>
+
+		<div class="col-md-4" />
+	</div>
+</div>

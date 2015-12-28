@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Board</title>
-    <link rel="stylesheet" href="public/bower_components/angular/angular-csp.css" />
-    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <style type="text/css">
-      [ng\:cloak], [ng-cloak], .ng-cloak {
-        display: none !important;
-      }
-    </style>
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body class="no-skin" ng-app="ClientApp" ng-cloak> 
-    <div class="main-content" ng-view></div>
+        <title>Board</title>
 
-    <!-- Scripts -->
-    <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Scripts -->
-    <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
-    <script src="public/bower_components/angular/angular.js"></script>
-    <script src="public/bower_components/angular/angular.min.js"></script>
-    <script src="public/bower_components/angular-resource/angular-resource.js"></script>
-    <script src="public/bower_components/angular-route/angular-route.js"></script>
-    <script src="public/bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="app.js"></script>
-    <script src="app/modules/core/module.js"></script>
-    <script src="app/modules/core/ajax/module.js"></script>
-    <script src="app/modules/core/ajax/model.js"></script>
-    <!-- Scripts Auth -->
-    <script src="app/modules/board/board.module.js"></script>
-    <!-- <script src="app/modules/board/board.model.js"></script> -->
-    <script src="app/modules/board/config/board.route.js"></script>
-    <script src="app/modules/board/controllers/board.controller.js"></script>
-    <script src="app/modules/board/controllers/login.controller.js"></script>
-  </body>
+        <!-- <link rel="stylesheet" href="public/bower_components/angular/angular-csp.css" />
+        <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" /> -->
+        <link rel="stylesheet" href="public/inspinia/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/inspinia/font-awesome/css/font-awesome.css">
+
+        <!-- Toastr style -->
+        <link rel="stylesheet" href="public/inspinia/css/plugins/toastr/toastr.min.css">
+
+        <!-- Gritter -->
+        <link rel="stylesheet" href="public/inspinia/js/plugins/gritter/jquery.gritter.css">
+
+        <link rel="stylesheet" href="public/inspinia/css/animate.css">
+        <link rel="stylesheet" href="public/inspinia/css/style.css">
+    </head>
+
+    <body ng-app="ClientApp">
+        <div id="wrapper">
+            <!-- <div id="navbar"></div> -->
+            <div ng-include src="'navbar.html'"></div>
+
+            <div id="page-wrapper" style="padding:10px;" ng-view></div>
+
+            <!-- Scripts -->
+            <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
+            <!-- Scripts -->
+            <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+            <!-- <script src="public/bower_components/angular/angular.js"></script> -->
+            <script src="public/bower_components/angular/angular.min.js"></script>
+            <script src="public/bower_components/angular-resource/angular-resource.js"></script>
+            <script src="public/bower_components/angular-route/angular-route.js"></script>
+            <script src="public/bower_components/angular-cookies/angular-cookies.min.js"></script>
+            <script src="public/bower_components/ng-table/dist/ng-table.min.js"></script>
+            <script src="app.js"></script>
+            <script src="app/core/module.js"></script>
+            <script src="app/core/ajax/module.js"></script>
+            <script src="app/core/ajax/model.js"></script>
+            <script src="app/core/auth/module.js"></script>
+            <script src="app/core/auth/model.js"></script>
+            <!-- Scripts Auth -->
+            <script src="app/modules/board/board.module.js"></script>
+            <script src="app/modules/board/config/board.route.js"></script>
+            <script src="app/modules/board/controller/board.controller.js"></script>
+            <script src="app/modules/board/controller/addNew.controller.js"></script>
+            <script src="app/modules/board/controller/edit.controller.js"></script>
+
+            <script src="app/modules/login/login.module.js"></script>
+            <script src="app/modules/login/config/login.route.js"></script>
+            <script src="app/modules/login/controller/login.controller.js"></script>
+        </div>
+    </body>
 </html>

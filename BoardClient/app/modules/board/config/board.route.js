@@ -1,18 +1,21 @@
-angular.module('board').config(['$routeProvider', function ($routeProvider) {
-  $routeProvider.when('/api/board', {
-    templateUrl: 'app/modules/board/view/home.html',
-    controller: 'boardCtrl',
-    resolve: {
-      init: function(ajaxServices) {
-        return ajaxServices.get('api/board').then(function(data) {
-          return data;
-        });
-      }
-    }
-  }).when('/login', {
-    templateUrl: 'app/modules/board/view/login.html',
-    controller: 'loginCtrl'
-  }).otherwise({
-    redirectTo: '/'
-  });
+angular.module("board").config(["$routeProvider", function ($routeProvider) {
+	$routeProvider.when("/board", {
+		templateUrl: "app/modules/board/view/board.html",
+		controller: "boardCtrl",
+		resolve: {
+			init: function(ajaxServices) {
+				return ajaxServices("/board").get(function(data) {
+					return data;
+				});
+			}
+		}
+	}).when("/addNew", {
+		templateUrl: "app/modules/board/view/addNew.html",
+		controller: "addNewCtrl"
+	}).when("/edit", {
+		templateUrl: "app/modules/board/view/addNew.html",
+		controller: "editCtrl"
+	}).otherwise({
+		redirectTo: "/"
+	});
 }]);
